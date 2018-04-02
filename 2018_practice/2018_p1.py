@@ -10,19 +10,21 @@ import sys
 def main():
     cases = int(sys.stdin.readline())
     for case in range(cases):
-        a,b = [int(n) for n in sys.stdin.readline().split()]
+        nextline = sys.stdin.readline()
+        a,b = [int(n) for n in nextline.split()]
+        n = int(sys.stdin.readline())
         response = ''
         while response != 'CORRECT':
-            return
-            guess = 1+ (b-a)/2+a
-            sys.stdout.write(str(guess))
+            guess = (1+a+b)/2
+            sys.stdout.write(str(guess)+'\n')
             sys.stdout.flush()
             response = sys.stdin.readline().strip()
             if response == 'TOO_SMALL':
                 a = guess
-            if response == 'TOO_BIG':
+            elif response == 'TOO_BIG':
                 b = guess - 1
-            if response == 'WRONG_ANSWER':
+            else:
                 break
-            
+
 main()
+
