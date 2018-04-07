@@ -79,24 +79,3 @@ def main():
             print ' '.join([str(value) for value in point])
         
 main()
-'''
-def dist(point):
-    out = 0
-    for i in point:
-        out += i**2
-    return math.sqrt(out)
-
-
-def test(targ):
-    a,b,c = findrotation(targ)
-    for p in [a,b,c]:
-        print 'Distance to {}: {}'.format(p, dist(p))
-        
-    for i,j in [(a,b),(a,c),(b,c)]:
-        print 'angles: {}'.format(np.dot(i,j))
-        
-    area = 0
-    for p in [a,b,c]:
-        area += p[1]
-    print 'area: {} vs {}'.format(targ, area*2)
-'''
